@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaTech | Digital Solutions</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #081225;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: #101d35;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 8%;
+      background: linear-gradient(
+        135deg, #081225, #12345b
+      );
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      max-width: 850px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #081225;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 45px;
+    }
+
+    .services {
+      background: #0d1b32;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(240px, 1fr)
+      );
+      gap: 25px;
+    }
+
+    .card {
+      padding: 35px 25px;
+      background: #172942;
+      border: 1px solid #28415e;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 30px #0004;
+    }
+
+    .card .emoji {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .about {
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: 20px auto;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-top: 45px;
+    }
+
+    .stat h3 {
+      font-size: 38px;
+      color: #38bdf8;
+    }
+
+    .stat p {
+      color: #94a3b8;
+    }
+
+    .contact {
+      background: #0d1b32;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .contact-form {
+      max-width: 520px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #172942;
+      color: white;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #38bdf8;
+    }
+
+    .contact-form button {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    footer {
+      padding: 25px;
+      background: #07101f;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .stats {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">NexaTech.</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>
+      Building the Future with
+      <span>Digital Innovation</span>
+    </h1>
+    <p>
+      We create beautiful websites, powerful
+      applications, and innovative digital
+      solutions to grow your business.
+    </p>
+    <a href="#services" class="btn">
+      Explore Our Services →
+    </a>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-desc">
+      Smart solutions designed for modern businesses
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">💻</div>
+        <h3>Web Development</h3>
+        <p>
+          Modern, responsive and high-performance
+          websites tailored to your needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">📱</div>
+        <h3>App Development</h3>
+        <p>
+          User-friendly mobile and web applications
+          with powerful functionality.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">☁️</div>
+        <h3>Cloud Solutions</h3>
+        <p>
+          Reliable hosting, cloud integration
+          and scalable infrastructure.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🔒</div>
+        <h3>Cyber Security</h3>
+        <p>
+          Helping businesses protect their
+          applications and digital assets.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2 class="section-title">About NexaTech</h2>
+
+    <p>
+      NexaTech is a digital solutions company
+      focused on innovation, performance and
+      customer satisfaction.
+    </p>
+
+    <p>
+      Our mission is to help businesses
+      transform ideas into powerful digital
+      experiences using modern technologies.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Project Goal</p>
+      </div>
+
+      <div class="stat">
+        <h3>24/7</h3>
+        <p>Digital Access</p>
+      </div>
+
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Commitment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p>
+      Have a project in mind? Send us a message!
+    </p>
+
+    <form
+      class="contact-form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    >
+      <input
+        type="hidden"
+        name="form-name"
+        value="contact"
+      >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+      ></textarea>
+
+      <button type="submit" class="btn">
+        Send Message →
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © 2026 NexaTech. All Rights Reserved.
+    </p>
+    <p>
+      Designed with ❤️ for the Digital Future
+    </p>
+  </footer>
+
+</body>
+</html>
